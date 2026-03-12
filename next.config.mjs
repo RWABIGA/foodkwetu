@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',          // static HTML export for GitHub Pages
+  trailingSlash: true,       // required for static hosting
+  basePath: '/foodkwetu',    // GitHub Pages serves at /reponame
+  assetPrefix: '/foodkwetu/',
   images: {
-    remotePatterns: [],
-  },
-  // Allow build to succeed even if env vars are absent (set them in Vercel dashboard)
-  typescript: {
-    ignoreBuildErrors: false,
+    unoptimized: true,       // required for static export (no Next.js image server)
   },
   eslint: {
     ignoreDuringBuilds: true,
