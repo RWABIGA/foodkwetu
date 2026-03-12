@@ -48,6 +48,7 @@ export default function ProductModal({ product, onClose, onAddToCart }: ProductM
     setQuantity((q) => parseFloat((q + product!.step).toFixed(2)))
   }
   function handleAdd() {
+    if (!product) return
     onAddToCart(product, quantity)
     setAdded(true)
     setTimeout(() => onClose(), 800)
